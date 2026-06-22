@@ -30,3 +30,15 @@ function executeTransfer(req, res, next) {
 }
 
 module.exports = { executeTransfer };
+
+
+git checkout -b feature/03-observabilidad
+
+git add src/instrument.js
+git add index.js
+git add src/controllers/transfer.controller.js
+
+git commit -m "feat(sentry): instrumentar backend y separar manejo de excepciones logicas 401 de fallos operacionales 500"
+
+git checkout main
+git merge feature/03-observabilidad --no-ff -m "merge: feature/03-observabilidad -> main"
